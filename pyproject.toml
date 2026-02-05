@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DDMethods"
+version = "0.1.0"
+description = "Package for Data Driven Methods Engineering"
+readme = "README.md"
+requires-python = "==3.13.*"
+license = { text = "MIT" }
+authors = [
+    { name = "Philip Korsager Nickel", email = "s214960@dtu.dk" }
+]
+
+# All dependencies (runtime, docs, and dev)
+dependencies = [
+  # Runtime dependencies
+  "numpy>=2.2.0,<2.4",
+  "numba>=0.61.0",
+  "matplotlib>=3.10.8",
+  "scipy>=1.17.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+
+
+
