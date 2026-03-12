@@ -1,18 +1,15 @@
 # Week 1 - Exercise 1.7
 # SVD Analysis of Cylinder Flow Data
 
-import numpy as np
 from pathlib import Path
-import scipy.io as sio
+
 import matplotlib.pyplot as plt
-
-# =============================================================================
-# 1.7(a) - Load data and perform SVD
-# =============================================================================
-
-plt.style.use("./science.mplstyle")
+import numpy as np
+import scipy.io as sio
+plt.style.use("science.mplstyle")
 
 FIGURES_DIR = Path("figures/W1-SVD/ex_1_7")
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 ### LOAD DATA
 file_path = Path("DATA") / "FLUIDS" / "ibpmUNSTEADY.plt"

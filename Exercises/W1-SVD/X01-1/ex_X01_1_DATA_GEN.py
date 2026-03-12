@@ -1,12 +1,13 @@
-import numpy as np
-from scipy.integrate import solve_ivp
-import matplotlib.pyplot as plt
 from pathlib import Path
 
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.integrate import solve_ivp
 
 plt.style.use("./science.mplstyle")
 
 FIGURES_DIR = Path("figures/W1-SVD/ex_X01_1")
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # RHS function
@@ -28,9 +29,7 @@ gamma = 1.0 / 5.4
 tspan = (0, 30)  # Define the time span for the simulation
 # Solve the system of differential equations using solve_ivp
 tmeasurements = np.linspace(0, 30, 100)
-sol = solve_ivp(
-    lambda t, y: sir_model(t, y, beta, gamma), tspan, y0, t_eval=tmeasurements
-)
+sol = solve_ivp(lambda t, y: sir_model(t, y, beta, gamma), tspan, y0, t_eval=tmeasurements)
 
 print(f"Shape of solution: {type(sol)}")
 
@@ -38,3 +37,4 @@ print(f"Shape of solution: {type(sol)}")
 plt.plot(sol.t, sol.y[0], "b", sol.t, sol.y[1], "r", sol.t, sol.y[2], "g")
 plt.legend(["S", "I", "R"])
 plt.savefig(FIGURES_DIR / "Num_Sim.pdf", bbox_inches="tight")
+plt.close()

@@ -43,6 +43,12 @@ htmlcov/
 .coverage
 .coverage.*
 
+# Experiment tracking
+wandb/
+outputs/
+checkpoints/
+
 # OS files
 .DS_Store
 Thumbs.db
+AGENTS.md

@@ -1,0 +1,4 @@
+_target_: ML.models.MLPTimestepper
+input_dim: 1024
+hidden_dims: [512, 256, 512]
+activation: relu

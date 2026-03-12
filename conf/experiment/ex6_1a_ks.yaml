@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - override /model: ks_mlp
+  - override /data: ks
+  - override /training: default
+
+wandb:
+  project: 02671-ex6-KS
+  group: ex6-1a
+  tags: [ex6-1a, KS]

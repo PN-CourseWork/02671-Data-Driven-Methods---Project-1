@@ -7,6 +7,7 @@ past a cylinder.
 """
 
 from pathlib import Path
+
 import matplotlib.pyplot as plt
 
 plt.style.use("./science.mplstyle")
