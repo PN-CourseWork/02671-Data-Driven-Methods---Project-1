@@ -1,0 +1,3 @@
+_target_: ML.dataset.KSDataset
+data_dir: DATA/W2-NN/KS
+normalize: true
